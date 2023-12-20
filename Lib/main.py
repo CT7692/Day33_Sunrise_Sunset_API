@@ -1,9 +1,10 @@
 import requests
 import smtplib
+import os
 from datetime import datetime
 
 MY_EMAIL = "jrydel92@gmail.com"
-MY_PW = "123"
+MY_PW = os.environ.get("G_SMTP_PW")
 def sunrise_email():
         with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
             connection.starttls()
