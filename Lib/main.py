@@ -23,7 +23,7 @@ now = datetime.now()
 
 api_request = "https://api.sunrise-sunset.org/json?formatted=0"
 
-response = requests.get(api_request)
+response = requests.get(api_request, timeout=60)
 jdata = response.json()
 response.raise_for_status()
 
